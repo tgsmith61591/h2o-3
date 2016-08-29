@@ -543,8 +543,8 @@ class H2OBinomialModelMetrics(MetricsBase):
         if not all(m in ["min_per_class_accuracy", "absolute_mcc", "precision", "recall", "specificity", "accuracy",
                          "f0point5", "f2", "f1", "mean_per_class_accuracy"] for m in metrics_list):
             raise ValueError(
-                "The only allowable metrics are min_per_class_accuracy, absolute_mcc, precision, accuracy, f0point5, "
-                "f2, f1, mean_per_class_accuracy")
+                "The only allowable metrics are min_per_class_accuracy, absolute_mcc (or absolute_MCC - deprecated), "
+                "precision, accuracy, f0point5, f2, f1, mean_per_class_accuracy")
 
         # make one big list that combines the thresholds and metric-thresholds
         metrics_thresholds = [self.find_threshold_by_max_metric(m) for m in metrics_list]
